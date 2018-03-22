@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">AgriCool-Grow your idea!</string>
     <string name="startBtn">Let\'s start</string>
+    <string name="security_prompt">Choose a security question</string>
+    <string-array name="security_questions">
+        <item>What is you favorite sports team?</item>
+        <item>What is your mothers maiden name?</item>
+        <item>Who is your best friend?</item>
+        <item>What is the name of your favorite uncle?</item>
+        <item>What is the name of your first pet?</item>
+        <item>What license plate did your first car had?</item>
+    </string-array>
 </resources>
