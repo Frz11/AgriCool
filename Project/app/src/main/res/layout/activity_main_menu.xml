@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainmenubg"
+    tools:context="com.example.fritzz.agricool.MainMenuActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="78dp"
+            android:background="@color/transparentGreen"
+            android:fontFamily="cursive"
+            android:text="Your Ideas"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/menuTransparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/myProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/button_bg_transparent"
+                android:fontFamily="@font/felipa"
+                android:padding="5dp"
+                android:text="My Profile"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/myPlantations"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_bg_transparent"
+                android:fontFamily="@font/felipa"
+                android:padding="5dp"
+                android:text="My Plantations"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/Plants"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_bg_transparent"
+                android:fontFamily="@font/felipa"
+                android:padding="5dp"
+                android:text="Plants"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

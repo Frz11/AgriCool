@@ -13,7 +13,14 @@ public class RegisterActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        Button btn = (Button)findViewById(R.id.signUpButton);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, MainMenuActivity.class));
+            }
+        });
 
     }
 }

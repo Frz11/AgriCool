@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#a9662f04</color>
     <color name="colorAccent">#FF4081</color>
     <color name="BrownColor">#5b2906</color>
+    <color name="transparentGreen">#75bbfcb5</color>
+    <color name="menuTransparent">#7b201d1d</color>
+    <color name="transpWhite">#00d7d2ce</color>
 </resources>
