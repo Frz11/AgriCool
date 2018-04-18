@@ -18,7 +18,15 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
+<<<<<<< HEAD
         <activity android:name=".MainMenu"></activity>
+=======
+        <activity android:name=".MainMenuActivity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+>>>>>>> 6c42b45518d5fc6a32546e8b4c2c701cbaf0db84
     </application>
 
 </manifest>

@@ -25,12 +25,21 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+<<<<<<< HEAD
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 loginButton.setBackgroundColor(Color.rgb(0,180,0));
                 Intent mainMenuIntent = new Intent(LoginActivity.this,MainMenu.class);
                 startActivity(mainMenuIntent);
+=======
+        Button loginButton = (Button)findViewById(R.id.loginButton);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
+>>>>>>> 6c42b45518d5fc6a32546e8b4c2c701cbaf0db84
             }
         });
 
