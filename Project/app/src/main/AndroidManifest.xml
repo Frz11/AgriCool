@@ -19,19 +19,11 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-<<<<<<< HEAD
         <activity android:name=".MainMenuActivity" />
-=======
-<<<<<<< HEAD
-        <activity android:name=".MainMenu"></activity>
-=======
-        <activity android:name=".MainMenuActivity"></activity>
->>>>>>> 6ab45aa275f409e3d502acb3a08ecfee37192bb7
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-<<<<<<< HEAD
 
         <activity
             android:name=".Profile"
@@ -42,9 +34,7 @@
             android:name=".PlantsActivity"
             android:label="@string/title_activity_plants"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-=======
->>>>>>> 6c42b45518d5fc6a32546e8b4c2c701cbaf0db84
->>>>>>> 6ab45aa275f409e3d502acb3a08ecfee37192bb7
+
     </application>
 
 </manifest>

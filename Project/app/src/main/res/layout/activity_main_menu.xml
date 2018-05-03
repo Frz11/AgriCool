@@ -2,45 +2,120 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
+    android:background="@drawable/mainmenubg"
     tools:context="com.example.fritzz.agricool.MainMenu">
 
-    <ScrollView
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:theme="@style/AppTheme"
+        android:background="@color/menuTransparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
-=======
-    android:background="@drawable/mainmenubg"
-    tools:context="com.example.fritzz.agricool.MainMenuActivity">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
-
-        <TextView
-            android:id="@+id/textView6"
+        <Button
+            android:id="@+id/myProfile"
             android:layout_width="0dp"
-            android:layout_height="78dp"
-            android:background="@color/transparentGreen"
-            android:fontFamily="cursive"
-            android:text="Your Ideas"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="56sp"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="444dp"
+            android:background="@drawable/button_bg_transparent"
+            android:fontFamily="@font/felipa"
+            android:padding="5dp"
+            android:text="My Profile"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/myPlantations"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/button_bg_transparent"
+            android:fontFamily="@font/felipa"
+            android:padding="5dp"
+            android:text="My Plantations"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/myProfile" />
+
+        <Button
+            android:id="@+id/Plants"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_bg_transparent"
+            android:fontFamily="@font/felipa"
+            android:padding="5dp"
+            android:text="Plants"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myPlantations" />
+
+        <Button
+            android:id="@+id/Settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/button_bg_transparent"
+            android:fontFamily="@font/felipa"
+            android:padding="5dp"
+            android:text="Settings"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Plants" />
+
+        <Button
+            android:id="@+id/Credits"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/button_bg_transparent"
+            android:fontFamily="@font/felipa"
+            android:padding="5dp"
+            android:text="Credits"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Settings" />
+
+        <Button
+            android:id="@+id/logOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_bg_transparent"
+            android:fontFamily="@font/felipa"
+            android:padding="5dp"
+            android:text="Log Out"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Credits" />
     </android.support.constraint.ConstraintLayout>
 
     <ScrollView
@@ -53,129 +128,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
->>>>>>> 6c42b45518d5fc6a32546e8b4c2c701cbaf0db84
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-<<<<<<< HEAD
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/myPlantations"
-                    android:layout_width="382dp"
-                    android:layout_height="61dp"
-                    android:layout_marginTop="8dp"
-                    android:text="My Plantations"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="36sp"
-                    android:theme="@style/AlertDialog.AppCompat"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <TextView
-                    android:id="@+id/newPlantation"
-                    android:layout_width="382dp"
-                    android:layout_height="61dp"
-                    android:layout_marginTop="64dp"
-                    android:text="New Plantation"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="36sp"
-                    android:theme="@style/AlertDialog.AppCompat"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
-
-            </android.support.constraint.ConstraintLayout>
-        </LinearLayout>
-=======
-            <Button
-                android:id="@+id/myProfile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="2dp"
-                android:background="@drawable/button_bg_transparent"
-                android:fontFamily="@font/felipa"
-                android:padding="5dp"
-                android:text="My Profile"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="36sp" />
-
-            <Button
-                android:id="@+id/myPlantations"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/button_bg_transparent"
-                android:fontFamily="@font/felipa"
-                android:padding="5dp"
-                android:text="My Plantations"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="36sp" />
-
-            <Button
-                android:id="@+id/Plants"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/button_bg_transparent"
-                android:fontFamily="@font/felipa"
-                android:padding="5dp"
-                android:text="Plants"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="36sp" />
-
-            <Button
-                android:id="@+id/Settings"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/button_bg_transparent"
-                android:fontFamily="@font/felipa"
-                android:padding="5dp"
-                android:text="Settings"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="36sp" />
-
-            <Button
-                android:id="@+id/Credits"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/button_bg_transparent"
-                android:fontFamily="@font/felipa"
-                android:padding="5dp"
-                android:text="Credits"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="36sp" />
-
-            <Button
-                android:id="@+id/logOut"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/button_bg_transparent"
-                android:fontFamily="@font/felipa"
-                android:padding="5dp"
-                android:text="Log Out"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_light"
-                android:textSize="36sp" />
-        </LinearLayout>
-
->>>>>>> 6c42b45518d5fc6a32546e8b4c2c701cbaf0db84
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

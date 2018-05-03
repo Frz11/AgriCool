@@ -47,26 +47,10 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        loginButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                loginButton.setBackgroundColor(Color.rgb(0,180,0));
-                Intent mainMenuIntent = new Intent(LoginActivity.this,MainMenu.class);
-                startActivity(mainMenuIntent);
-=======
-        Button loginButton = (Button)findViewById(R.id.loginButton);
->>>>>>> 6ab45aa275f409e3d502acb3a08ecfee37192bb7
-
-
-        Button loginButton = (Button)findViewById(R.id.loginButton);
         final RequestQueue queue = Volley.newRequestQueue(this);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
                 final String username = ((TextView) findViewById(R.id.username)).getText().toString();
                 final String password = ((TextView) findViewById(R.id.password)).getText().toString();
 
@@ -104,10 +88,6 @@ public class LoginActivity extends AppCompatActivity {
 // Add the request to the RequestQueue.
                 queue.add(stringRequest);
 
-=======
-                startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
->>>>>>> 6c42b45518d5fc6a32546e8b4c2c701cbaf0db84
->>>>>>> 6ab45aa275f409e3d502acb3a08ecfee37192bb7
             }
         });
 
