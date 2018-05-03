@@ -7,4 +7,6 @@
     <color name="transparentGreen">#75bbfcb5</color>
     <color name="menuTransparent">#7b201d1d</color>
     <color name="transpWhite">#00d7d2ce</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

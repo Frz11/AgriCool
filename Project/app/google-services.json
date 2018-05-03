@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "213977467672",
+    "firebase_url": "https://project-55799.firebaseio.com",
+    "project_id": "project-55799",
+    "storage_bucket": "project-55799.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213977467672:android:cb7e9994f5ec514f",
+        "android_client_info": {
+          "package_name": "com.example.fritzz.agricool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213977467672-4f3kqmgopiqshb9uj7hdlptjj7bj9pn3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fritzz.agricool",
+            "certificate_hash": "a9b3e0610de28cf384bd60d4eec6a2f593ef04c0"
+          }
+        },
+        {
+          "client_id": "213977467672-9v3tcqt6v04g1k5hk5pillrm2efidkcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQC_XbHeVGKGAWgosdfo6AmEyh7UKq8bY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213977467672-9v3tcqt6v04g1k5hk5pillrm2efidkcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,6 +3,7 @@
     package="com.example.fritzz.agricool">
 
     <application
+        android:name=".GlobalVariables"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,11 +19,21 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainMenuActivity"></activity>
+        <activity android:name=".MainMenuActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".Profile"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".PlantsActivity"
+            android:label="@string/title_activity_plants"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

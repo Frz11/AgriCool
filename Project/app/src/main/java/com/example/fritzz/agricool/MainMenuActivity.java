@@ -13,13 +13,20 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         final Button myProfile = (Button)findViewById(R.id.myProfile);
-
+        final Button plants = (Button) findViewById(R.id.Plants);
         myProfile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
-                myProfile.setBackgroundColor(1);
+                startActivity(new Intent(MainMenuActivity.this,Profile.class));
             }
+        });
+        plants.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainMenuActivity.this,PlantsActivity.class));
+            }
+
         });
     }
 }

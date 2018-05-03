@@ -84,6 +84,45 @@
                 android:textAllCaps="false"
                 android:textColor="@android:color/background_light"
                 android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/Settings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_bg_transparent"
+                android:fontFamily="@font/felipa"
+                android:padding="5dp"
+                android:text="Settings"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/Credits"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_bg_transparent"
+                android:fontFamily="@font/felipa"
+                android:padding="5dp"
+                android:text="Credits"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/logOut"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/button_bg_transparent"
+                android:fontFamily="@font/felipa"
+                android:padding="5dp"
+                android:text="Log Out"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp" />
         </LinearLayout>
 
     </ScrollView>
