@@ -9,6 +9,7 @@ import android.app.Application;
 public class GlobalVariables extends Application {
     private String serverIp;
     private User thisUser;
+    private Crops[] savedCrops;
     public void setIp(String ip){
         this.serverIp = ip;
     }
@@ -17,5 +18,8 @@ public class GlobalVariables extends Application {
     }
     public void setThisUser(User user){
         this.thisUser = new User(user);
+    }
+    public void setCrops(Crops[] crops){
+        savedCrops = crops;
     }
 }

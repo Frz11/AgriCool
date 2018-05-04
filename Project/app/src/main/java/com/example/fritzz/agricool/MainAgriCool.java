@@ -17,7 +17,7 @@ public class MainAgriCool extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_agri_cool);
-        ((GlobalVariables) this.getApplication()).setIp("172.24.28.48");
+        ((GlobalVariables) this.getApplication()).setIp("192.168.3.174");
 
         final Button button = findViewById(R.id.button_start);
         button.setOnClickListener(new View.OnClickListener() {

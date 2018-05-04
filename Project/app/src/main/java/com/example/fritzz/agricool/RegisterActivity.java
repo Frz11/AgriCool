@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity{
 
 
                     startActivity(new Intent(RegisterActivity.this, MainMenuActivity.class));
-                    
+
                 }
             }
         });
