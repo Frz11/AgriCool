@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 final String username = ((TextView) findViewById(R.id.username)).getText().toString();
                 final String password = ((TextView) findViewById(R.id.password)).getText().toString();
 
-                final String  url = "http://"+serverIp+"/sql/selecter.php?query=SELECT 1 FROM users WHERE username='"+username+"' AND password='"+password+"';";
+                final String  url = "http://"+serverIp+"/sql/selecter.php?query=SELECT * FROM users WHERE username='"+username+"' AND password='"+password+"';";
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                         new Response.Listener<String>() {
                             @Override
@@ -64,8 +64,8 @@ public class LoginActivity extends AppCompatActivity {
 
                                     ObjectMapper mapper = new ObjectMapper();
                                     try {
-                                        User user = mapper.readValue(response,User.class);
-                                        gb.setThisUser(user);
+                                        User[] user = mapper.readValue(response,User[].class);
+                                        gb.setThisUser(user[0]);
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }

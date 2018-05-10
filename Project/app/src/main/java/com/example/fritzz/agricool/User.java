@@ -5,22 +5,28 @@ package com.example.fritzz.agricool;
  */
 
 public class User {
-    public String username,password,email,dateOfBirth,securityQuestion,securityAnswer;
+    public String Username,Password,Email,DateOfBirth,SecurityQuestion,SecurityAnswer,regdate;
+    public int user_id;
     public User(){}
-    public User(String username,String password,String email, String dateOfBirth,String securityQuestion,String securityAnswer){
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-        this.securityAnswer = securityAnswer;
-        this.securityQuestion = securityQuestion;
+    public User(int user_id,String username,String password,String email, String dateOfBirth,
+                String securityQuestion,String securityAnswer,String regdate){
+        this.Username = username;
+        this.Password = password;
+        this.Email = email;
+        this.DateOfBirth = dateOfBirth;
+        this.SecurityAnswer = securityAnswer;
+        this.SecurityQuestion = securityQuestion;
+        this.user_id = user_id;
+        this.regdate = regdate;
     }
     public User(User user){
-        this.username = user.username;
-        this.password = user.password;
-        this.email = user.email;
-        this.securityQuestion = user.securityQuestion;
-        this.securityAnswer = user.securityAnswer;
-        this.dateOfBirth = user.dateOfBirth;
+        this.Username = user.Username;
+        this.Password = user.Password;
+        this.Email = user.Email;
+        this.SecurityQuestion = user.SecurityQuestion;
+        this.SecurityAnswer = user.SecurityAnswer;
+        this.DateOfBirth = user.DateOfBirth;
+        this.user_id = user.user_id;
+        this.regdate = user.regdate;
     }
 }

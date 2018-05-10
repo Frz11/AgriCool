@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), "Complete all the fields!", Toast.LENGTH_LONG).show();
 
                 }else  {
-                    newUser = new User(username,password,email,dateOfBirth,question,answer);
+                   // newUser = new User(username,password,email,dateOfBirth,question,answer,0);
                     boolean seachedUser = false;
 
                     //String userId = UUID.randomUUID().toString();

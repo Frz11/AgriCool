@@ -19,6 +19,7 @@ public class GlobalVariables extends Application {
     public void setThisUser(User user){
         this.thisUser = new User(user);
     }
+    public User getThisUser(){return this.thisUser;}
     public void setCrops(Crops[] crops){
         savedCrops = crops;
     }

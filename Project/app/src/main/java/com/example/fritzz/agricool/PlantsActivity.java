@@ -5,16 +5,26 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.ColorSpace;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabItem;
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TabHost;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -43,14 +53,26 @@ public class PlantsActivity extends AppCompatActivity {
         final String  url = "http://"+serverIp+"/sql/selecter.php?query=SELECT * FROM CROPS;";
         final Context context = this;
         final Intent intent = getIntent();
+        final User thisUser = gb.getThisUser();
+       // final Model model = new Model();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plants);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        TabLayout tabs = findViewById(R.id.plantsTabs);
+
+        //for tab switching
+
+        //final View allPlantsContent = (View) this.findViewById(R.id.allPlantsContent);
+        //inal View myPlantsContent = (View) this.findViewById(R.id.myPlantsContent);
+
+
+        //completeaza tabela cu toate plantele
+
         final TableLayout tablePlants = findViewById(R.id.plantsTable);
         tablePlants.setBackgroundColor(Color.LTGRAY);
+
+
         final RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(GET, url,
+        final StringRequest stringRequest = new StringRequest(GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -68,6 +90,7 @@ public class PlantsActivity extends AppCompatActivity {
                                     TableRow row = new TableRow(getApplicationContext());
                                     String cropName = crops[i].crop_name;
                                     TextView tv = new TextView(getApplicationContext());
+
                                     tv.setText(cropName);
                                     tv.setTextSize(24);
                                     row.addView(tv);
@@ -130,14 +153,214 @@ public class PlantsActivity extends AppCompatActivity {
                         if(cropName.equals("")){
                             Toast.makeText(context, "Complete all fields!", Toast.LENGTH_SHORT).show();
                         } else {
-                            String url = "http://"+serverIp+"/inserter.php?query=INSERT INTO CROPS VALUES("+cropName+");";
-
+                            final String url = "http://"+serverIp+"/sql/inserter.php?query=INSERT INTO CROPS(crop_name,user_id) VALUES('"+cropName+"','"+thisUser.user_id+"');";
+                            StringRequest request = new StringRequest(Request.Method.GET,url,
+                                    new Response.Listener<String>(){
+                                    @Override
+                                        public void onResponse(String response){
+                                        //Toast.makeText(getApplicationContext(), response,Toast.LENGTH_LONG);
+                                        //Log.d("insert plant",response);
+                                        //Log.d("url",url);
+                                        dialog.dismiss();
+                                        Intent intent = getIntent();
+                                        finish();
+                                        startActivity(intent);
+                                    }
+                            }, new Response.ErrorListener(){
+                                @Override
+                                public void onErrorResponse(VolleyError error) {}
+                            });
+                            queue.add(request);
                         }
+
                     }
                 });
                 dialog.show();
             }
         });
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                String tabOption = tab.getText().toString();
+                if(tabOption.equals("All Plants")){
+                    tablePlants.removeAllViews();
+                    TableRow row = new TableRow(getApplicationContext());
+                    TextView tv = new TextView(getApplicationContext());
+                    tv.setText("All Plants");
+                    tv.setTextSize(36);
+                    tablePlants.addView(tv);
+                    String url = "http://"+serverIp+"/sql/selecter.php?query=SELECT * FROM CROPS;";
+
+                    final StringRequest stringRequest = new StringRequest(GET, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    Log.d("CropsResponse",response);
+                                    // Display the first 500 characters of the response string.
+                                    Toast.makeText(getApplicationContext(),response,Toast.LENGTH_SHORT);
+
+                                    if(!response.equals("[]")){
+
+                                        ObjectMapper mapper = new ObjectMapper();
+                                        try {
+                                            Crops [] crops = mapper.readValue(response,Crops[].class);
+                                            gb.setCrops(crops);
+                                            for(int i = 0;i < crops.length;i++){
+                                                TableRow row = new TableRow(getApplicationContext());
+                                                String cropName = crops[i].crop_name;
+                                                TextView tv = new TextView(getApplicationContext());
+                                                tv.setText(cropName);
+                                                tv.setTextSize(24);
+                                                row.addView(tv);
+                                                TableLayout.LayoutParams tableRowParams=
+                                                        new TableLayout.LayoutParams
+                                                                (TableLayout.LayoutParams.FILL_PARENT,TableLayout.LayoutParams.WRAP_CONTENT);
+                                                tableRowParams.setMargins(0,8,0,0);
+                                                row.setLayoutParams(tableRowParams);
+                                                tv.setTextColor(Color.WHITE);
+                                                if(i%2 == 0){
+                                                    row.setBackgroundColor(Color.DKGRAY);
+                                                } else {
+                                                    row.setBackgroundColor(Color.GRAY);
+                                                }
+                                                tablePlants.addView(row);
+
+                                            }
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+
+
+                                    } else {
+
+                                        Toast.makeText(getApplicationContext(), "No plants found!", Toast.LENGTH_LONG).show();
+
+                                    }
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), "Something went wrong...", Toast.LENGTH_LONG).show();
+
+                        }
+                    });
+                    queue.add(stringRequest);
+                } else {
+                    tablePlants.removeAllViews();
+                    TableRow row = new TableRow(getApplicationContext());
+                    TextView tv = new TextView(getApplicationContext());
+                    tv.setText("My Plants");
+                    tv.setTextSize(36);
+                    tablePlants.addView(row);
+                    row.addView(tv);
+
+                    String url = "http://"+serverIp+"/sql/selecter.php?query=SELECT * FROM CROPS WHERE user_id="+thisUser.user_id+";";
+
+                    final StringRequest stringRequest = new StringRequest(GET, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    Log.d("CropsResponse",response);
+                                    // Display the first 500 characters of the response string.
+                                    Toast.makeText(getApplicationContext(),response,Toast.LENGTH_SHORT);
+
+                                    if(!response.equals("[]")){
+
+                                        ObjectMapper mapper = new ObjectMapper();
+                                        try {
+                                            Crops [] crops = mapper.readValue(response,Crops[].class);
+                                            gb.setCrops(crops);
+                                            for(int i = 0;i < crops.length;i++){
+                                                TableRow row = new TableRow(getApplicationContext());
+                                                String cropName = crops[i].crop_name;
+                                                TextView tv = new TextView(getApplicationContext());
+                                                LinearLayout ll = new LinearLayout(getApplicationContext());
+                                                final ButtonDelete button = new ButtonDelete(getApplicationContext(),crops[i].crop_id);
+                                                button.setBackgroundResource(R.drawable.ic_button_delete);
+                                                button.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        //Toast.makeText(getApplicationContext(),button.itemId+"",Toast.LENGTH_LONG).show();
+                                                        final String url = "http://"+serverIp+"/sql/deleter.php?query=DELETE FROM CROPS WHERE user_id="+thisUser.user_id+" AND" +
+                                                                " crop_id="+button.itemId+";";
+                                                        StringRequest request = new StringRequest(GET, url, new Response.Listener<String>() {
+                                                            @Override
+                                                            public void onResponse(String response) {
+                                                                Toast.makeText(getApplicationContext(),url,Toast.LENGTH_LONG).show();
+                                                                Intent intent = getIntent();
+                                                                //finish();
+                                                                //startActivity(intent);
+                                                            }
+                                                        }, new Response.ErrorListener() {
+                                                            @Override
+                                                            public void onErrorResponse(VolleyError error) {
+                                                                Toast.makeText(getApplicationContext(),"Couldn't delete!",Toast.LENGTH_LONG).show();
+
+                                                            }
+                                                        });
+                                                        queue.add(request);
+
+                                                    }
+                                                });
+                                                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                                                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                                                lp.setMargins(700,0,0,0);
+                                                button.setLayoutParams(lp);
+                                                tv.setText(cropName);
+                                                tv.setTextSize(24);
+                                                ll.addView(tv);
+                                                ll.addView(button);
+                                                row.addView(ll);
+                                                //button.setY(row.getY()/2);
+                                                //button.setX(row.getX());
+
+                                                TableLayout.LayoutParams tableRowParams=
+                                                        new TableLayout.LayoutParams
+                                                                (TableLayout.LayoutParams.FILL_PARENT,TableLayout.LayoutParams.WRAP_CONTENT);
+                                                tableRowParams.setMargins(0,8,0,0);
+                                                row.setLayoutParams(tableRowParams);
+                                                tv.setTextColor(Color.WHITE);
+                                                if(i%2 == 0){
+                                                    row.setBackgroundColor(Color.DKGRAY);
+                                                } else {
+                                                    row.setBackgroundColor(Color.GRAY);
+                                                }
+                                                tablePlants.addView(row);
+
+                                            }
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+
+
+                                    } else {
+
+                                        Toast.makeText(getApplicationContext(), "No plants found!", Toast.LENGTH_LONG).show();
+
+                                    }
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), "Something went wrong...", Toast.LENGTH_LONG).show();
+
+                        }
+                    });
+                    queue.add(stringRequest);
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
     }
 
 }

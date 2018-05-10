@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_plants">
 
     <TableLayout
-        android:id="@+id/plantsTable"
+        android:id="@+id/myPlantsTable"
         android:layout_width="match_parent"
         android:layout_height="502dp"
         android:layout_marginBottom="8dp"
@@ -21,29 +21,25 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111">
+        app:layout_constraintVertical_bias="0.0">
 
         <TableRow
             android:id="@+id/PlantsRow"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/thisRow"
+                android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="All Plants"
                 android:textAlignment="center"
                 android:textSize="36sp" />
-
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
+            android:layout_height="match_parent" />
 
     </TableLayout>
-
 </android.support.constraint.ConstraintLayout>
