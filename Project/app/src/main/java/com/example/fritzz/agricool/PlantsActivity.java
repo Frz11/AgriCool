@@ -150,10 +150,21 @@ public class PlantsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v){
                         String cropName = ((EditText) dialog.findViewById(R.id.cropName)).getText().toString();
-                        if(cropName.equals("")){
+                        String ph_min = ((EditText) dialog.findViewById(R.id.phMin)).getText().toString();
+                        String ph_max = ((EditText) dialog.findViewById(R.id.phMax)).getText().toString();
+                        String temp_min = ((EditText) dialog.findViewById(R.id.tempMin)).getText().toString();
+                        String temp_max = ((EditText) dialog.findViewById(R.id.tempMax)).getText().toString();
+                        String prec_min = ((EditText) dialog.findViewById(R.id.precMin)).getText().toString();
+                        String prec_max = ((EditText) dialog.findViewById(R.id.precMax)).getText().toString();
+                        if(cropName.equals("") || ph_min.equals("") || ph_max.equals("") ||
+                                temp_max.equals("") || temp_min.equals("") ||
+                                prec_max.equals("") || prec_min.equals("")){
                             Toast.makeText(context, "Complete all fields!", Toast.LENGTH_SHORT).show();
                         } else {
-                            final String url = "http://"+serverIp+"/sql/inserter.php?query=INSERT INTO CROPS(crop_name,user_id) VALUES('"+cropName+"','"+thisUser.user_id+"');";
+                            final String url = "http://"+serverIp+"/sql/inserter.php?query="+
+                                    "INSERT INTO CROPS(crop_name,user_id,ph_min,ph_max,temp_min,temp_max,prec_min,prec_max)" +
+                                    " VALUES('"+cropName+"','"+thisUser.user_id+"','"+ph_min+"','"+ph_max+"'" +
+                                    ",'"+temp_min+"','"+temp_max+"','"+prec_min+"','"+prec_max+"');";
                             StringRequest request = new StringRequest(Request.Method.GET,url,
                                     new Response.Listener<String>(){
                                     @Override
@@ -286,10 +297,10 @@ public class PlantsActivity extends AppCompatActivity {
                                                         StringRequest request = new StringRequest(GET, url, new Response.Listener<String>() {
                                                             @Override
                                                             public void onResponse(String response) {
-                                                                Toast.makeText(getApplicationContext(),url,Toast.LENGTH_LONG).show();
+                                                                //Toast.makeText(getApplicationContext(),url,Toast.LENGTH_LONG).show();
                                                                 Intent intent = getIntent();
-                                                                //finish();
-                                                                //startActivity(intent);
+                                                                finish();
+                                                                startActivity(intent);
                                                             }
                                                         }, new Response.ErrorListener() {
                                                             @Override
@@ -304,13 +315,14 @@ public class PlantsActivity extends AppCompatActivity {
                                                 });
                                                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                                                         LinearLayout.LayoutParams.WRAP_CONTENT);
-                                                lp.setMargins(700,0,0,0);
-                                                button.setLayoutParams(lp);
+                                                //lp.setMargins(700,0,0,0);
+                                                //button.setLayoutParams(lp);
                                                 tv.setText(cropName);
                                                 tv.setTextSize(24);
                                                 ll.addView(tv);
                                                 ll.addView(button);
                                                 row.addView(ll);
+                                                //row.addView(button);
                                                 //button.setY(row.getY()/2);
                                                 //button.setX(row.getX());
 

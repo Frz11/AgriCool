@@ -29,12 +29,27 @@
             android:name=".Profile"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_profile"
-            android:theme="@style/FullscreenTheme" />
+            android:theme="@style/FullscreenTheme"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".PlantsActivity"
             android:label="@string/title_activity_plants"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyPlantations"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_my_plantations"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".MyPlantationsActivity"
+            android:label="@string/title_activity_my_plantations"
+            android:parentActivityName=".MainMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.fritzz.agricool.MainMenuActivity" />
+        </activity>
+        <activity android:name=".AddParcelActivity"></activity>
     </application>
 
 </manifest>

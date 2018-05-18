@@ -26,7 +26,7 @@ import java.io.IOException;
 public class LoginActivity extends AppCompatActivity {
 
 
-    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+//    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
     @Override
@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                                     }
 
                                     startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
+
                                 } else {
 
                                     Toast.makeText(getApplicationContext(), "Wrong username or password", Toast.LENGTH_LONG).show();

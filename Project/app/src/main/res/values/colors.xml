@@ -11,7 +11,9 @@
     <color name="transpWhite">#00d7d2ce</color>
 
     <color name="black_overlay">#66000000</color>
-=======
->>>>>>> 6c42b45518d5fc6a32546e8b4c2c701cbaf0db84
->>>>>>> 6ab45aa275f409e3d502acb3a08ecfee37192bb7
+    <color name="blue_gray">#43555b</color>
+    <color name="button_transp">#5a03f81a</color>
+    =======
+    >>>>>>> 6c42b45518d5fc6a32546e8b4c2c701cbaf0db84
+    >>>>>>> 6ab45aa275f409e3d502acb3a08ecfee37192bb7
 </resources>

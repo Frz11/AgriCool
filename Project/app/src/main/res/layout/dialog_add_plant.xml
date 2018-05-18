@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -34,10 +33,10 @@
         android:text="OK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cropName"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.703" />
 
     <Button
         android:id="@+id/buttonCancel"
@@ -50,8 +49,126 @@
         android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toEndOf="@+id/buttonOk"
         app:layout_constraintTop_toBottomOf="@+id/cropName"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.703" />
+
+    <EditText
+        android:id="@+id/precMin"
+        android:layout_width="101dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="172dp"
+        android:ems="10"
+        android:hint="Prec Min"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cropName"
+        app:layout_constraintVertical_bias="0.175" />
+
+    <EditText
+        android:id="@+id/precMax"
+        android:layout_width="101dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="172dp"
+        android:ems="10"
+        android:hint="Prec Max"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toEndOf="@+id/precMin"
+        app:layout_constraintTop_toBottomOf="@+id/cropName"
+        app:layout_constraintVertical_bias="0.175" />
+
+    <EditText
+        android:id="@+id/phMin"
+        android:layout_width="101dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="PH MIN"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tempMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cropName"
+        app:layout_constraintVertical_bias="0.615" />
+
+    <EditText
+        android:id="@+id/phMax"
+        android:layout_width="101dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="PH MAX"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/tempMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toEndOf="@+id/phMin"
+        app:layout_constraintTop_toBottomOf="@+id/cropName" />
+
+    <EditText
+        android:id="@+id/tempMin"
+        android:layout_width="101dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="Min Temp"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/precMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cropName"
+        app:layout_constraintVertical_bias="0.058" />
+
+    <EditText
+        android:id="@+id/tempMax"
+        android:layout_width="101dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="Max Temp"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/precMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tempMin"
+        app:layout_constraintTop_toBottomOf="@+id/cropName"
+        app:layout_constraintVertical_bias="0.0" />
+
 </android.support.constraint.ConstraintLayout>
