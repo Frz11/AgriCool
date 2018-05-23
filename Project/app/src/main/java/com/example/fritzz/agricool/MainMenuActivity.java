@@ -17,10 +17,16 @@ public class MainMenuActivity extends AppCompatActivity {
         final Button plants = (Button) findViewById(R.id.Plants);
         final Button logOut = (Button) findViewById(R.id.logOut);
         final Button myPlantations = (Button) findViewById(R.id.myPlantations);
+        final Button credits = findViewById(R.id.Credits);
+        credits.setOnClickListener(event -> {
+            //finish();
+            startActivity(new Intent(MainMenuActivity.this,CreditsActivity.class));
+        });
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //android.os.Process.killProcess(Process.myPid());
+                finish();
                 startActivity(new Intent(MainMenuActivity.this,LoginActivity.class));
             }
         });

@@ -102,6 +102,8 @@ public class RegisterActivity extends AppCompatActivity{
                                 Toast.makeText(getApplicationContext(), "Username or email taken...", Toast.LENGTH_LONG).show();
                             } else {
                                 queue.add(request);
+                                finish();
+                                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
                             }
                         }
                     }, new Response.ErrorListener() {

@@ -112,7 +112,8 @@ public class PlantsActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-
+                            finish();
+                            startActivity(new Intent(PlantsActivity.this,MyPlantationsActivity.class));
                         } else {
 
                             Toast.makeText(getApplicationContext(), "No plants found!", Toast.LENGTH_LONG).show();

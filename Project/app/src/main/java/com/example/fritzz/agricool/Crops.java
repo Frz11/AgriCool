@@ -31,4 +31,5 @@ public class Crops {
         this.ph_max = crop.ph_max;
         this.ph_min = crop.ph_min;
     }
+
 }

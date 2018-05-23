@@ -17,7 +17,7 @@ public class MainAgriCool extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_agri_cool);
-        ((GlobalVariables) this.getApplication()).setIp("192.168.42.111");
+        ((GlobalVariables) this.getApplication()).setIp("172.24.28.48");
 
         final Button button = findViewById(R.id.button_start);
         button.setOnClickListener(new View.OnClickListener() {
@@ -25,6 +25,7 @@ public class MainAgriCool extends AppCompatActivity {
             public void onClick(View view) {
                 button.setBackgroundColor(Color.rgb(0,180,0));
                 Intent loginIntent = new Intent(MainAgriCool.this,LoginActivity.class);
+                finish();
                 startActivity(loginIntent);
 
             }

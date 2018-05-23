@@ -8,6 +8,7 @@
     tools:context=".AddParcelActivity">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="413dp"
         android:layout_height="match_parent"
         android:layout_marginEnd="8dp"
@@ -38,10 +39,31 @@
         app:layout_constraintVertical_bias="0.002" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/parcelName"
         android:layout_width="410dp"
         android:layout_height="43dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_bg_transparent"
+        android:ems="10"
+        android:hint="Parcel Name"
+        android:inputType="textPersonName"
+        android:textColorHint="@android:color/background_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/size"
+        android:layout_width="410dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="380dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -49,15 +71,14 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/button_bg_transparent"
         android:ems="10"
-        android:hint="Number of Plants"
+        android:hint="Size(ha)"
         android:inputType="numberSigned"
         android:textColorHint="@android:color/background_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/plantsSpinner" />
 
     <TextView
         android:id="@+id/textView7"
@@ -94,33 +115,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/size"
         app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="195dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Plants No.:"
-        android:textColor="@android:color/background_dark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantsSpinner"
-        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="124dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="480dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -132,8 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/parcelName" />
 
     <Spinner
         android:id="@+id/soilsSpinner"
@@ -170,7 +171,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/cancelButton"
         android:layout_width="149dp"
         android:layout_height="82dp"
         android:layout_marginBottom="8dp"
@@ -187,12 +188,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/addButton"
         app:layout_constraintTop_toBottomOf="@+id/climatesSpinner"
         app:layout_constraintVertical_bias="0.418" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/addButton"
         android:layout_width="149dp"
         android:layout_height="82dp"
         android:layout_marginBottom="8dp"

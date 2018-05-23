@@ -23,4 +23,5 @@ public class GlobalVariables extends Application {
     public void setCrops(Crops[] crops){
         savedCrops = crops;
     }
+    public Crops[] getSavedCrops(){return savedCrops;}
 }
