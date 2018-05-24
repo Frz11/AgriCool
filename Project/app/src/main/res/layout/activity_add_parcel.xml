@@ -2,8 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@drawable/addplantationsbg"
     tools:context=".AddParcelActivity">
 
@@ -24,46 +24,41 @@
 
     <Spinner
         android:id="@+id/plantsSpinner"
-        android:layout_width="414dp"
+        android:layout_width="0dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_bg_transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.002" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
         android:id="@+id/parcelName"
-        android:layout_width="410dp"
+        android:layout_width="0dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/button_bg_transparent"
         android:ems="10"
         android:hint="Parcel Name"
         android:inputType="textPersonName"
         android:textColorHint="@android:color/background_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2" />
 
     <EditText
         android:id="@+id/size"
-        android:layout_width="410dp"
+        android:layout_width="0dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="380dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -74,9 +69,8 @@
         android:hint="Size(ha)"
         android:inputType="numberSigned"
         android:textColorHint="@android:color/background_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantsSpinner" />
 
@@ -84,7 +78,6 @@
         android:id="@+id/textView7"
         android:layout_width="152dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -92,18 +85,15 @@
         android:textColor="@android:color/background_dark"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soilsSpinner"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintTop_toBottomOf="@+id/soilsSpinner" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="83dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="336dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -111,18 +101,15 @@
         android:textColor="@android:color/background_dark"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/size"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/size" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="124dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="480dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -130,7 +117,6 @@
         android:textColor="@android:color/background_dark"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,47 +124,43 @@
 
     <Spinner
         android:id="@+id/soilsSpinner"
-        android:layout_width="410dp"
+        android:layout_width="0dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="276dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_bg_transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Spinner
-        android:id="@+id/climatesSpinner"
-        android:layout_width="410dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_bg_transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Spinner
+        android:id="@+id/climatesSpinner"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_bg_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="149dp"
+        android:layout_width="0dp"
         android:layout_height="82dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_bg_transparent"
         android:text="Cancel"
@@ -194,11 +176,11 @@
 
     <Button
         android:id="@+id/addButton"
-        android:layout_width="149dp"
+        android:layout_width="0dp"
         android:layout_height="82dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_bg_transparent"
         android:text="Add"
@@ -208,6 +190,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/climatesSpinner"
-        app:layout_constraintVertical_bias="0.418" />
+        app:layout_constraintVertical_bias="0.422" />
 
 </android.support.constraint.ConstraintLayout>

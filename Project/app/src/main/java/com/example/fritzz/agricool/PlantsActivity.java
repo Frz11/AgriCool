@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.ColorSpace;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -112,8 +114,8 @@ public class PlantsActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-                            finish();
-                            startActivity(new Intent(PlantsActivity.this,MyPlantationsActivity.class));
+                           // finish();
+                         //   startActivity(new Intent(PlantsActivity.this,PlantsActivity.class));
                         } else {
 
                             Toast.makeText(getApplicationContext(), "No plants found!", Toast.LENGTH_LONG).show();
@@ -270,6 +272,7 @@ public class PlantsActivity extends AppCompatActivity {
 
                     final StringRequest stringRequest = new StringRequest(GET, url,
                             new Response.Listener<String>() {
+                                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                                 @Override
                                 public void onResponse(String response) {
                                     Log.d("CropsResponse",response);
@@ -316,8 +319,12 @@ public class PlantsActivity extends AppCompatActivity {
                                                 });
                                                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                                                         LinearLayout.LayoutParams.WRAP_CONTENT);
+                                                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(300,300);
+                                                //button.setTop(-7);
                                                 //lp.setMargins(700,0,0,0);
-                                                //button.setLayoutParams(lp);
+                                                //params.setMargins(0,-7,0,0);
+                                                button.setGravity(0);
+                                                //button.set
                                                 tv.setText(cropName);
                                                 tv.setTextSize(24);
                                                 ll.addView(tv);

@@ -50,7 +50,8 @@
                 android:value="com.example.fritzz.agricool.MainMenuActivity" />
         </activity>
         <activity android:name=".AddParcelActivity" />
-        <activity android:name=".CreditsActivity"></activity>
+        <activity android:name=".CreditsActivity" />
+        <activity android:name=".BestPlantationsActivity"></activity>
     </application>
 
 </manifest>
